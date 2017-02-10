@@ -11,15 +11,14 @@ namespace Triangle
     {
         public Triangle[] Read(string filename)
         {
-            Point p1 = new Point(0, 0);
-            Point p2 = new Point(0, 0);
-            Point p3 = new Point(0, 0);
-
             var lines = File.ReadAllLines(filename);
             Triangle[] triangles = new Triangle[lines.Length];
 
             for (int i = 0; i < lines.Length; ++i)
             {
+                Point p1 = new Point(0, 0);
+                Point p2 = new Point(0, 0);
+                Point p3 = new Point(0, 0);
                 string s = lines[i];
                 MatchCollection countMatches = Regex.Matches(s, "[0-9]+");
                 if (countMatches.Count != 6) continue;

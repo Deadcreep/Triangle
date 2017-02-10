@@ -4,3 +4,10 @@ C:\Users\Kirahvi\documents\visual studio 2013\Projects\Triangle\Triangle\bin\Deb
 C:\Users\Kirahvi\documents\visual studio 2013\Projects\Triangle\Triangle\obj\Debug\Triangle.csprojResolveAssemblyReference.cache
 C:\Users\Kirahvi\documents\visual studio 2013\Projects\Triangle\Triangle\obj\Debug\Triangle.exe
 C:\Users\Kirahvi\documents\visual studio 2013\Projects\Triangle\Triangle\obj\Debug\Triangle.pdb
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\Triangle.exe.config
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\obj\Debug\Triangle.exe
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\obj\Debug\Triangle.pdb
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\Triangle.exe
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\Triangle.pdb
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\obj\Debug\Triangle.csprojResolveAssemblyReference.cache
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\TriangleKit.txt

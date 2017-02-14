@@ -6,28 +6,22 @@ using System.Threading.Tasks;
 
 namespace Triangle
 {
-    class Print
+    static class Print
     {
-        Triangle tt;
-        public Print(Triangle tr) 
+        static public void PrintPerimeterArea(Triangle triangle)
         {
-            tt = tr;
+            Console.WriteLine(Math.Round(triangle.Perimeter, 2) + Environment.NewLine + Math.Round(triangle.Area, 2) + Environment.NewLine);
         }
 
-        public void PrintPerimeterArea(Triangle tt)
+        static public void PrintIsosceles( Triangle triangle)
         {
-            Console.WriteLine(Math.Round(tt.Perimeter, 2) + Environment.NewLine + Math.Round(tt.Area, 2) + Environment.NewLine);
-        }
-
-        public void PrintIsosceles( Triangle tt)
-        {
-            if (tt.Isosceles == true) Console.WriteLine("Isosceles triangle");
+            if (triangle.Isosceles == true) Console.WriteLine("Isosceles triangle");
             else Console.WriteLine("Not isosceles triangle");
         }
 
-        public void PrintRight(Triangle tt)
+        static public void PrintRight(Triangle triangle)
         {
-            if (tt.Right == true) Console.WriteLine("Right-angled triangle");
+            if (triangle.Right == true) Console.WriteLine("Right-angled triangle");
             else Console.WriteLine("Not right-angled triangle");
         }
     }

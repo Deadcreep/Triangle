@@ -12,8 +12,8 @@ namespace Triangle
         static void Main(string[] args)
         {
 
-            Averages getAverage = new Averages();
-            getAverage.GetAverages();
+           Triangle[] triangles =  Reader.Reading("TriangleKit.txt");
+           Averages.GetAverages(triangles);
         }
     }
 }

@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace Triangle
 {
-    class Averages
+    static class Averages
     {
-        public void GetAverages()
+        static public void GetAverages(Triangle[] triangles)
         {
             double averagesPerimeterRight = 0;
             double averageAreaIsosceles = 0;
             double sumPerimeterRight = 0;
             double sumAreaIsosceles = 0;
             int countRight = 0;
-            int countIso = 0;
-            Reader reader = new Reader();
-            Triangle[] triangles = reader.Read("TriangleKit.txt");
+            int countIso = 0;           
             for (int i = 0; i < triangles.Length; i++)
             {
                 if (triangles[i].Isosceles == true)

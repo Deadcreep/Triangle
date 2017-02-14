@@ -7,9 +7,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace Triangle
 {
-    class Reader
+    static class Reader
     {
-        public Triangle[] Read(string filename)
+        static public Triangle[] Reading(string filename)
         {
             var lines = File.ReadAllLines(filename);
             Triangle[] triangles = new Triangle[lines.Length];

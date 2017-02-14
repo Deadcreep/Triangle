@@ -34,13 +34,14 @@ namespace Triangle
             CalculateProperties();
         }
 
-        public Triangle CreateTriangle(Point first, Point second, Point third)
+        public static Triangle CreateTriangle(Point first, Point second, Point third)
         {
+            double ab = Point.GetDistance(first, second);
+            double bc = Point.GetDistance(second, third);
+            double ac = Point.GetDistance(first, third);
 
             Triangle triangle = new Triangle(first, second, third);
-            if (Point.GetDistance(first, second) + Point.GetDistance(first, third) < Point.GetDistance(second, third) ||
-                Point.GetDistance(second, third) + Point.GetDistance(second, third) < Point.GetDistance(first, second) ||
-                Point.GetDistance(first, second) + Point.GetDistance(second, third) < Point.GetDistance(first, third))
+            if (ab + bc < ac || ab + ac < bc || ac + bc < ab)
             {
                 return null;
             }

@@ -24,7 +24,7 @@ namespace Triangle
                 Point p2 = new Point(int.Parse(countMatches[2].Value), int.Parse(countMatches[3].Value));
                 Point p3 = new Point(int.Parse(countMatches[4].Value), int.Parse(countMatches[5].Value));
 
-                Triangle temp = new Triangle(p1, p2, p3);
+                Triangle temp = Triangle.CreateTriangle(p1, p2, p3);
                 triangles[i] = temp;
             }
             return triangles;

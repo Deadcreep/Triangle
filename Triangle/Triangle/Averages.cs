@@ -18,6 +18,7 @@ namespace Triangle
             int countIso = 0;           
             for (int i = 0; i < triangles.Length; i++)
             {
+                if (triangles[i] == null) continue;
                 if (triangles[i].Isosceles == true)
                 {
                     sumAreaIsosceles += triangles[i].Area;

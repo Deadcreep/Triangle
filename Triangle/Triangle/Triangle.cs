@@ -36,21 +36,20 @@ namespace Triangle
 
         public Triangle CreateTriangle(Point first, Point second, Point third)
         {
-            try
+
+            Triangle triangle = new Triangle(first, second, third);
+            if (Point.GetDistance(first, second) + Point.GetDistance(first, third) < Point.GetDistance(second, third) ||
+                Point.GetDistance(second, third) + Point.GetDistance(second, third) < Point.GetDistance(first, second) ||
+                Point.GetDistance(first, second) + Point.GetDistance(second, third) < Point.GetDistance(first, third))
             {
-                Triangle triangle = new Triangle( first,  second,  third);
-                if (Point.GetDistance(first, second) + Point.GetDistance(first, third) < Point.GetDistance(second, third) ||
-                    Point.GetDistance(second, third) + Point.GetDistance(second, third) < Point.GetDistance(first, second) ||
-                    Point.GetDistance(first, second) + Point.GetDistance(second, third) < Point.GetDistance(first, third) )
-                {
-                    return null;
-                }
-                else
-                {
-                    return triangle;
-                }
+                return null;
             }
-            
+            else
+            {
+                return triangle;
+            }
+
+
         }
 
         private void CalculateProperties()
@@ -79,7 +78,7 @@ namespace Triangle
         private void GetIsosceles(double ab, double bc, double ac)
         {
             if (ab == ac || ab == bc || bc == ac)
-                isosceles =  true;
+                isosceles = true;
             else
                 isosceles = false;
         }

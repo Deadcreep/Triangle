@@ -20,9 +20,9 @@ namespace Triangle
                 MatchCollection countMatches = Regex.Matches(s, "[0-9]+\.[0-9]+|[0-9]+");
                 if (countMatches.Count != 6) continue;
                 
-                Point p1 = new Point(int.Parse(countMatches[0].Value), int.Parse(countMatches[1].Value));
-                Point p2 = new Point(int.Parse(countMatches[2].Value), int.Parse(countMatches[3].Value));
-                Point p3 = new Point(int.Parse(countMatches[4].Value), int.Parse(countMatches[5].Value));
+                Point p1 = new Point(Double.Parse(countMatches[0].Value), int.Parse(countMatches[1].Value));
+                Point p2 = new Point(Double.Parse(countMatches[2].Value), int.Parse(countMatches[3].Value));
+                Point p3 = new Point(Double.Parse(countMatches[4].Value), int.Parse(countMatches[5].Value));
 
                 Triangle temp = Triangle.CreateTriangle(p1, p2, p3);
                 triangles[i] = temp;

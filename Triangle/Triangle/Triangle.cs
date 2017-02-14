@@ -25,13 +25,32 @@ namespace Triangle
         public bool Right { get { return right; } }
 
 
-        public Triangle(Point first, Point second, Point third)
+        private Triangle(Point first, Point second, Point third)   // Constructor
         {
             a = first;
             b = second;
             c = third;
 
             CalculateProperties();
+        }
+
+        public Triangle CreateTriangle(Point first, Point second, Point third)
+        {
+            try
+            {
+                Triangle triangle = new Triangle( first,  second,  third);
+                if (Point.GetDistance(first, second) + Point.GetDistance(first, third) < Point.GetDistance(second, third) ||
+                    Point.GetDistance(second, third) + Point.GetDistance(second, third) < Point.GetDistance(first, second) ||
+                    Point.GetDistance(first, second) + Point.GetDistance(second, third) < Point.GetDistance(first, third) )
+                {
+                    return null;
+                }
+                else
+                {
+                    return triangle;
+                }
+            }
+            
         }
 
         private void CalculateProperties()

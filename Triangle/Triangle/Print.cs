@@ -16,18 +16,18 @@ namespace Triangle
 
         public void PrintPerimeterArea(Triangle tt)
         {
-            Console.WriteLine(Math.Round(tt.Perimeter, 2) + "\n" + Math.Round(tt.Area, 2) + "\n");
+            Console.WriteLine(Math.Round(tt.Perimeter, 2) + Environment.NewLine + Math.Round(tt.Area, 2) + Environment.NewLine);
         }
 
         public void PrintIsosceles( Triangle tt)
         {
-            if (tt.CheckIsosceles()) Console.WriteLine("Isosceles triangle");
+            if (tt.Isosceles == true) Console.WriteLine("Isosceles triangle");
             else Console.WriteLine("Not isosceles triangle");
         }
 
         public void PrintRight(Triangle tt)
         {
-            if (tt.GetRight()) Console.WriteLine("Right-angled triangle");
+            if (tt.Right == true) Console.WriteLine("Right-angled triangle");
             else Console.WriteLine("Not right-angled triangle");
         }
     }

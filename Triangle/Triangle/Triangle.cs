@@ -12,9 +12,6 @@ namespace Triangle
         Point b;
         Point c;
 
-        Edge ab;
-        Edge ac;
-        Edge bc;
 
         double perimeter;
         double area;
@@ -34,41 +31,45 @@ namespace Triangle
             b = second;
             c = third;
 
-            ab = new Edge(first, second);
-            ac = new Edge(first, third);
-            bc = new Edge(second, third);
-
-            GetPerimeter();
-            GetArea();
-            GetIsosceles();
-            GetRight();
+            CalculateProperties();
         }
 
-
-        private void GetArea()
+        private void CalculateProperties()
         {
-            double halfPerimeter = (ab.Length + ac.Length + bc.Length) / 2;
-            area = Math.Sqrt(halfPerimeter * (halfPerimeter - ab.Length) * (halfPerimeter - ac.Length) * (halfPerimeter - bc.Length));
+            double ab = Point.GetDistance(a, b);
+            double bc = Point.GetDistance(b, c);
+            double ac = Point.GetDistance(a, c);
+
+            GetArea(ab, bc, ac);
+            GetPerimeter(ab, bc, ac);
+            GetIsosceles(ab, bc, ac);
+            GetRight(ab, bc, ac);
         }
 
-        private void GetPerimeter()
+        private void GetArea(double ab, double bc, double ac)
         {
-            perimeter = ab.Length + ac.Length + bc.Length;
+            double halfPerimeter = (ab + ac + bc) / 2;
+            area = Math.Sqrt(halfPerimeter * (halfPerimeter - ab) * (halfPerimeter - ac) * (halfPerimeter - bc));
         }
 
-        private void GetIsosceles()
+        private void GetPerimeter(double ab, double bc, double ac)
         {
-            if (ab.Length == ac.Length || ab.Length == bc.Length || bc.Length == ac.Length)
+            perimeter = ab + ac + bc;
+        }
+
+        private void GetIsosceles(double ab, double bc, double ac)
+        {
+            if (ab == ac || ab == bc || bc == ac)
                 isosceles =  true;
             else
                 isosceles = false;
         }
 
-        private void GetRight()
+        private void GetRight(double ab, double bc, double ac)
         {
-            if (Math.Sqrt(ab.Length * ab.Length + ac.Length * ac.Length) == Math.Sqrt(bc.Length * bc.Length) ||
-                Math.Sqrt(ab.Length * ab.Length + bc.Length * bc.Length) == Math.Sqrt(ac.Length * ac.Length) ||
-                Math.Sqrt(ac.Length * ac.Length + bc.Length * bc.Length) == Math.Sqrt(ab.Length * ab.Length))
+            if (Math.Sqrt(ab * ab + ac * ac) == Math.Sqrt(bc * bc) ||
+                Math.Sqrt(ab * ab + bc * bc) == Math.Sqrt(ac * ac) ||
+                Math.Sqrt(ac * ac + bc * bc) == Math.Sqrt(ab * ab))
                 right = true;
             else
                 right = false;

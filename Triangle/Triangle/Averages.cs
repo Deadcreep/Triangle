@@ -16,17 +16,17 @@ namespace Triangle
             double sumAreaIsosceles = 0;
             int countRight = 0;
             int countIso = 0;
-            //Reader reader = new Reader();
+            Reader reader = new Reader();
             Triangle[] triangles = reader.Read("TriangleKit.txt");
             for (int i = 0; i < triangles.Length; i++)
             {
-                if (triangles[i].CheckIsosceles() == true)
+                if (triangles[i].Isosceles == true)
                 {
                     sumAreaIsosceles += triangles[i].Area;
                     countIso++;
                 }
 
-                if (triangles[i].GetRight() == true)
+                if (triangles[i].Right == true)
                 {
                     sumPerimeterRight += triangles[i].Perimeter;
                     countRight++;

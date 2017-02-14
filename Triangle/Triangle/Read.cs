@@ -7,7 +7,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace Triangle
 {
-   static class Reader
+    class Reader
     {
         public Triangle[] Read(string filename)
         {
@@ -16,19 +16,13 @@ namespace Triangle
 
             for (int i = 0; i < lines.Length; ++i)
             {
-                Point p1 = new Point(0, 0);
-                Point p2 = new Point(0, 0);
-                Point p3 = new Point(0, 0);
                 string s = lines[i];
                 MatchCollection countMatches = Regex.Matches(s, "[0-9]+");
                 if (countMatches.Count != 6) continue;
-                p1.X = int.Parse(countMatches[0].Value);
-                p1.Y = int.Parse(countMatches[1].Value);
-                p2.X = int.Parse(countMatches[2].Value);
-                p2.Y = int.Parse(countMatches[3].Value);
-                p3.X = int.Parse(countMatches[4].Value);
-                p3.Y = int.Parse(countMatches[5].Value);
-                
+                Point p1 = new Point(int.Parse(countMatches[0].Value), int.Parse(countMatches[1].Value));
+                Point p2 = new Point(int.Parse(countMatches[2].Value), int.Parse(countMatches[3].Value));
+                Point p3 = new Point(int.Parse(countMatches[4].Value), int.Parse(countMatches[5].Value));
+
                 Triangle temp = new Triangle(p1, p2, p3);
                 triangles[i] = temp;
             }

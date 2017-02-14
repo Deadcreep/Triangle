@@ -27,7 +27,7 @@ namespace Triangle
 
         public void PrintRight(Triangle tt)
         {
-            if (tt.CheckRight()) Console.WriteLine("Right-angled triangle");
+            if (tt.GetRight()) Console.WriteLine("Right-angled triangle");
             else Console.WriteLine("Not right-angled triangle");
         }
     }

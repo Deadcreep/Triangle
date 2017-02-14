@@ -22,14 +22,8 @@ namespace Triangle
         {
             first = f;
             second = s;
-
-            calculateLength();
+            Length = Point.GetDistance(f, s);
         }
-
-        public void calculateLength()      // Method
-        {
-            var l = Math.Sqrt((second.X - first.X) * (second.X - first.X) + (second.Y - first.Y) * (second.Y - first.Y));
-            Length = l;
-        }
+       
     }
 }

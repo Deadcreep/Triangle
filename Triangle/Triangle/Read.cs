@@ -7,7 +7,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace Triangle
 {
-    class Reader
+   static class Reader
     {
         public Triangle[] Read(string filename)
         {

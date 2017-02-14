@@ -17,7 +17,7 @@ namespace Triangle
             for (int i = 0; i < lines.Length; ++i)
             {
                 string s = lines[i];
-                MatchCollection countMatches = Regex.Matches(s, "[0-9]+");
+                MatchCollection countMatches = Regex.Matches(s, "[0-9]+\.[0-9]+|[0-9]+");
                 if (countMatches.Count != 6) continue;
                 
                 Point p1 = new Point(int.Parse(countMatches[0].Value), int.Parse(countMatches[1].Value));

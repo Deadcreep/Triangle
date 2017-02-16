@@ -25,7 +25,7 @@ namespace Triangle
         public bool Right { get { return right; } }
 
 
-        private Triangle(Point first, Point second, Point third)   // Constructor
+        public Triangle(Point first, Point second, Point third)   // Constructor
         {
             a = first;
             b = second;
@@ -36,12 +36,12 @@ namespace Triangle
 
         public static Triangle CreateTriangle(Point first, Point second, Point third)
         {
-            double ab = Point.GetDistance(first, second);
-            double bc = Point.GetDistance(second, third);
-            double ac = Point.GetDistance(first, third);
+            double ab = Edge.Length(first, second);
+            double bc = Edge.Length(second, third);
+            double ac = Edge.Length(first, third);
 
             Triangle triangle = new Triangle(first, second, third);
-            if (ab + bc < ac || ab + ac < bc || ac + bc < ab)
+            if (ab + bc <= ac || ab + ac <= bc || ac + bc <= ab)
             {
                 return null;
             }
@@ -55,9 +55,9 @@ namespace Triangle
 
         private void CalculateProperties()
         {
-            double ab = Point.GetDistance(a, b);
-            double bc = Point.GetDistance(b, c);
-            double ac = Point.GetDistance(a, c);
+            double ab = Edge.Length(a, b);
+            double bc = Edge.Length(b, c);
+            double ac = Edge.Length(a, c);
 
             GetArea(ab, bc, ac);
             GetPerimeter(ab, bc, ac);

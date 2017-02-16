@@ -8,21 +8,18 @@ namespace Triangle
 {
     class Edge
     {
-        Point first;
-        Point second;
-        double length;
-
-        public double Length
-        {
-            get { return length; }
-            private set { length = value; }
-        }
-
+        public readonly Point first;
+        public readonly Point second;        
+           
         public Edge(Point f, Point s)       // Construct
         {
             first = f;
             second = s;
-            Length = Point.GetDistance(f, s);
+        }
+
+        public static double Length( Point first, Point second)
+        {
+              return Math.Sqrt((second.X - first.X) * (second.X - first.X) + (second.Y - first.Y) * (second.Y - first.Y));
         }
        
     }

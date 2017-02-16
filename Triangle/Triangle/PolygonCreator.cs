@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Triangle
 {
-    static class TriangleCreator
+    static class PolygonCreator
     {
         static public Triangle CreateTriangle (Point first, Point second, Point third)
         {
@@ -22,6 +22,12 @@ namespace Triangle
             {
                 return new Triangle(first, second, third);
             }
+        }
+
+        static public Polygon CreatePolygon(List <Point> points)
+        {
+            Polygon polygon = new Polygon(points);
+            return  polygon;
         }
     }
 }

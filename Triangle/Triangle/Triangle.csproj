@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Averages.cs" />
+    <Compile Include="Polygon.cs" />
     <Compile Include="Read.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Point.cs" />
@@ -64,7 +65,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triangle.cs" />
-    <Compile Include="TriangleCreator.cs" />
+    <Compile Include="PolygonCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

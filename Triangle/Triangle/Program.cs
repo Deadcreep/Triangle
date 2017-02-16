@@ -12,7 +12,7 @@ namespace Triangle
         static void Main(string[] args)
         {
 
-           List<Triangle> triangles =  Reader.Reading("TriangleKit.txt");
+           List<Triangle> triangles =  Reader.ReadTriangle("TriangleKit.txt");
            Averages.GetAverages(triangles);
         }
     }

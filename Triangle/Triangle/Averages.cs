@@ -8,7 +8,7 @@ namespace Triangle
 {
     static class Averages
     {
-        static public void GetAverages(Triangle[] triangles)
+        static public void GetAverages(List<Triangle> triangles)
         {
             double averagesPerimeterRight = 0;
             double averageAreaIsosceles = 0;
@@ -16,18 +16,18 @@ namespace Triangle
             double sumAreaIsosceles = 0;
             int countRight = 0;
             int countIso = 0;           
-            for (int i = 0; i < triangles.Length; i++)
+            foreach(var triangle in triangles)
             {
-                if (triangles[i] == null) continue;
-                if (triangles[i].Isosceles == true)
+                if (triangle == null) continue;
+                if (triangle.Isosceles == true)
                 {
-                    sumAreaIsosceles += triangles[i].Area;
+                    sumAreaIsosceles += triangle.Area;
                     countIso++;
                 }
-
-                if (triangles[i].Right == true)
+                
+                if (triangle.Right == true)
                 {
-                    sumPerimeterRight += triangles[i].Perimeter;
+                    sumPerimeterRight += triangle.Perimeter;
                     countRight++;
                 }
             }
@@ -35,8 +35,8 @@ namespace Triangle
             averagesPerimeterRight = sumPerimeterRight / countRight;
             averageAreaIsosceles = sumAreaIsosceles / countIso;
 
-            Console.WriteLine("Average perimeter of right-angled triangles = " + Math.Round(averagesPerimeterRight, 2) + "\n");
-            Console.WriteLine("Average area of isosceles triangles = " + Math.Round(averageAreaIsosceles, 2) + "\n");
+            Console.WriteLine("Average perimeter of right-angled triangles = " + Math.Round(averagesPerimeterRight, 2) + Environment.NewLine);
+            Console.WriteLine("Average area of isosceles triangles = " + Math.Round(averageAreaIsosceles, 2) + Environment.NewLine);
         }
     }
 }

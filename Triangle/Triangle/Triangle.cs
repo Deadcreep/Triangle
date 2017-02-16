@@ -34,24 +34,6 @@ namespace Triangle
             CalculateProperties();
         }
 
-        public static Triangle CreateTriangle(Point first, Point second, Point third)
-        {
-            double ab = Edge.Length(first, second);
-            double bc = Edge.Length(second, third);
-            double ac = Edge.Length(first, third);
-
-            Triangle triangle = new Triangle(first, second, third);
-            if (ab + bc <= ac || ab + ac <= bc || ac + bc <= ab)
-            {
-                return null;
-            }
-            else
-            {
-                return triangle;
-            }
-
-
-        }
 
         private void CalculateProperties()
         {
@@ -95,5 +77,21 @@ namespace Triangle
         }
 
     }
-
 }
+
+
+        //public static Triangle CreateTriangle(Point first, Point second, Point third)
+        //{
+        //    double ab = Edge.Length(first, second);
+        //    double bc = Edge.Length(second, third);
+        //    double ac = Edge.Length(first, third);
+
+        //    
+        //    if (ab + bc <= ac || ab + ac <= bc || ac + bc <= ab)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        return triangle;
+        //    }

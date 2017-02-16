@@ -26,8 +26,15 @@ namespace Triangle
 
         static public Polygon CreatePolygon(List <Point> points)
         {
-            Polygon polygon = new Polygon(points);
-            return  polygon;
+            if (points.Count < 3)
+            {
+                throw new ArgumentException("Incorrect coordinates");
+            }
+            else
+            {
+                Polygon polygon = new Polygon(points);
+                return polygon; 
+            }
         }
     }
 }

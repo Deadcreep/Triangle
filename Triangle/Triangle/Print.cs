@@ -24,5 +24,10 @@ namespace Triangle
             if (triangle.Right == true) Console.WriteLine("Right-angled triangle");
             else Console.WriteLine("Not right-angled triangle");
         }
+
+        static public void PrintPolygon(Polygon polygon)
+        {
+            Console.WriteLine(polygon.perimeter + Environment.NewLine + polygon.area);
+        }
     }
 }

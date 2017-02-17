@@ -11,3 +11,4 @@ C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\Triangle.
 C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\Triangle.pdb
 C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\obj\Debug\Triangle.csprojResolveAssemblyReference.cache
 C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\TriangleKit.txt
+C:\Users\Kirahvi\Documents\GitHub\Triangle\Triangle\Triangle\bin\Debug\PolygonKit.txt

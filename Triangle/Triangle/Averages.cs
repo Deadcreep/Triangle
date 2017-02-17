@@ -8,15 +8,15 @@ namespace Triangle
 {
     static class Averages
     {
-        static public void GetAverages(List<Triangle> triangles)
+        static public double[] GetAveragesForTriangles(List<Triangle> triangles)
         {
             double averagesPerimeterRight = 0;
             double averageAreaIsosceles = 0;
             double sumPerimeterRight = 0;
             double sumAreaIsosceles = 0;
             int countRight = 0;
-            int countIso = 0;           
-            foreach(var triangle in triangles)
+            int countIso = 0;
+            foreach (var triangle in triangles)
             {
                 if (triangle == null) continue;
                 if (triangle.Isosceles == true)
@@ -24,7 +24,7 @@ namespace Triangle
                     sumAreaIsosceles += triangle.Area;
                     countIso++;
                 }
-                
+
                 if (triangle.Right == true)
                 {
                     sumPerimeterRight += triangle.Perimeter;
@@ -32,11 +32,25 @@ namespace Triangle
                 }
             }
 
-            averagesPerimeterRight = sumPerimeterRight / countRight;
-            averageAreaIsosceles = sumAreaIsosceles / countIso;
+            return new double[] {sumPerimeterRight / countRight,
+           sumAreaIsosceles / countIso};
+        }
 
-            Console.WriteLine("Average perimeter of right-angled triangles = " + Math.Round(averagesPerimeterRight, 2) + Environment.NewLine);
-            Console.WriteLine("Average area of isosceles triangles = " + Math.Round(averageAreaIsosceles, 2) + Environment.NewLine);
+        static public double[] GetAveragesForPolygones(List<Polygon> polygones)
+        {
+            double sumPerimeter = 0;
+            double sumArea = 0;
+            foreach (var polygon in polygones)
+            {
+
+                sumArea += polygon.Area;
+
+                sumPerimeter += polygon.Perimeter;
+
+            }
+
+            return new double[] {sumPerimeter / polygones.Count,
+            sumArea / polygones.Count};
         }
     }
 }

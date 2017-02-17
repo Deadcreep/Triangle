@@ -8,26 +8,16 @@ namespace Triangle
 {
     static class Print
     {
-        static public void PrintPerimeterArea(Triangle triangle)
+        static public void PrintAveragesForTriangle(double[] array)
         {
-            Console.WriteLine(Math.Round(triangle.Perimeter, 2) + Environment.NewLine + Math.Round(triangle.Area, 2) + Environment.NewLine);
+            Console.WriteLine("Average perimeter of right-angled triangles = " + Math.Round(array.First(), 2) + Environment.NewLine);
+            Console.WriteLine("Average area of isosceles triangles = " + Math.Round(array.Last(), 2) + Environment.NewLine);
         }
-
-        static public void PrintIsosceles( Triangle triangle)
+        static public void PrintAveragesForPolygon(double[] array)
         {
-            if (triangle.Isosceles == true) Console.WriteLine("Isosceles triangle");
-            else Console.WriteLine("Not isosceles triangle");
+            Console.WriteLine("Average perimeter of polygones = " + Math.Round(array.First(), 2) + Environment.NewLine);
+            Console.WriteLine("Average area of polygones = " + Math.Round(array.Last(), 2) + Environment.NewLine);
         }
-
-        static public void PrintRight(Triangle triangle)
-        {
-            if (triangle.Right == true) Console.WriteLine("Right-angled triangle");
-            else Console.WriteLine("Not right-angled triangle");
-        }
-
-        static public void PrintPolygon(Polygon polygon)
-        {
-            Console.WriteLine(polygon.perimeter + Environment.NewLine + polygon.area);
-        }
+                     
     }
 }

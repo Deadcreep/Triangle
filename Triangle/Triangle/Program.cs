@@ -12,9 +12,11 @@ namespace Triangle
         static void Main(string[] args)
         {
             List<Polygon> polygons = Reader.ReadPolygon("PolygonKit.txt");
-           List<Triangle> triangles =  Reader.ReadTriangle("TriangleKit.txt");
-           Averages.GetAverages(triangles);
-           Print.PrintPolygon(polygons[0]);
+            List<Triangle> triangles = Reader.ReadTriangle("TriangleKit.txt");
+            double[] average =  Averages.GetAveragesForTriangles(triangles);
+            Print.PrintAveragesForTriangle(average);
+
+            Print.PrintAveragesForPolygon(Averages.GetAveragesForPolygones(polygons));
         }
     }
 }

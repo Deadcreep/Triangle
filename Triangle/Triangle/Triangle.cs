@@ -8,10 +8,12 @@ namespace Triangle
 {
     class Triangle
     {
-        Point a;
-        Point b;
-        Point c;
-
+        public Point a;
+        public Point b;
+        public Point c;
+        public Edge ab;
+        public Edge bc;
+        public Edge ac;
 
         double perimeter;
         double area;
@@ -30,21 +32,20 @@ namespace Triangle
             a = first;
             b = second;
             c = third;
-
-            CalculateProperties();
-        }
-
-
-        private void CalculateProperties()
-        {
-            double ab = Edge.Length(a, b);
-            double bc = Edge.Length(b, c);
-            double ac = Edge.Length(a, c);
-
-            CalculateArea(ab, bc, ac);
-            CalculatePerimeter(ab, bc, ac);
-            CalculateIsosceles(ab, bc, ac);
-            CalculateRight(ab, bc, ac);
+            double e1 = Edge.Length(a, b);
+            double e2 = Edge.Length(b, c);
+            double e3 = Edge.Length(a, c);
+            if (e1 + e2 <= e3 || e1 + e3 <= e2 || e3 + e2 <= e1)
+            {
+                throw new ArgumentException("incorrect coordinates");
+            }
+            Edge ab = new Edge(first, second);
+            Edge bc = new Edge(second, third);
+            Edge ac = new Edge(first, third);
+            CalculateArea(e1, e2, e3);
+            CalculatePerimeter(e1, e2, e3);
+            CalculateIsosceles(e1, e2, e3);
+            CalculateRight(e1, e2, e3);
         }
 
         private void CalculateArea(double ab, double bc, double ac)
@@ -74,6 +75,20 @@ namespace Triangle
                 right = true;
             else
                 right = false;
+        }
+
+        public static bool operator ==(Triangle a, Triangle b)
+        {
+            return a.ab == b.ab && a.bc == b.bc ||
+                   a.ab == b.bc && a.bc == b.ab ||
+                   a.ac == b.ac && a.bc == b.bc ||
+                   a.ac == b.bc && a.bc == b.ac ||
+                   a.ab == b.ab && a.ac == b.ac ||
+                   a.ab == b.ac && a.ac == b.ab;
+        }
+        public static bool operator !=(Triangle a, Triangle b)
+        {
+            return !(a == b);
         }
 
     }

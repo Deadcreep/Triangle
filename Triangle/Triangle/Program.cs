@@ -15,7 +15,6 @@ namespace Triangle
             List<Triangle> triangles = Reader.ReadTriangle("TriangleKit.txt");
             double[] average =  Averages.GetAveragesForTriangles(triangles);
             Print.PrintAveragesForTriangle(average);
-
             Print.PrintAveragesForPolygon(Averages.GetAveragesForPolygones(polygons));
         }
     }

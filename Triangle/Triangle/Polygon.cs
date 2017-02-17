@@ -8,16 +8,19 @@ namespace Triangle
 {
     class Polygon
     {
-        List<Point> nodes;
+        public readonly List<Point> nodes;
         double perimeter = 0;
-          double area = 0;
+        double area = 0;
 
         public Polygon(List<Point> points)
         {
             nodes = new List<Point>(points);
+            if (points.Count < 3)
+            {
+                throw new ArgumentException("Incorrect coordinates");
+            }
             CalculatePerimeter();
-            CalculateArea();
-            
+            CalculateArea();           
         }
         public double Perimeter 
         {

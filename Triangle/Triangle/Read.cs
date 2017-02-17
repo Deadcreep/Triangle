@@ -23,7 +23,7 @@ namespace Triangle
                     Point p1 = new Point(coordinates[0], coordinates[1]);
                     Point p2 = new Point(coordinates[2], coordinates[3]);
                     Point p3 = new Point(coordinates[4], coordinates[5]);
-                    var triangle = PolygonCreator.CreateTriangle(p1, p2, p3);
+                    var triangle = new Triangle(p1, p2, p3);
                     triangles.Add(triangle);
                 }
                 catch (ArgumentException ae)
@@ -66,9 +66,10 @@ namespace Triangle
                     for (int j = 0; j < coordinates.Count; j += 2)
                     {
                         Point temp = new Point(coordinates[j], coordinates[j + 1]);
-                        points.Add(temp);
+                        points.Add(temp);                        
                     }
-                    polygones.Add(PolygonCreator.CreatePolygon(points));
+                    Polygon polygon = new Polygon(points);
+                    polygones.Add(polygon);
 
                 }
                 catch (ArgumentException ae)

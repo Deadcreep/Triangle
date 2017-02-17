@@ -21,6 +21,17 @@ namespace Triangle
         {
               return Math.Sqrt((second.X - first.X) * (second.X - first.X) + (second.Y - first.Y) * (second.Y - first.Y));
         }
+
+        public static bool operator ==(Edge a, Edge b)
+        {
+            return a.first == b.first && a.second == b.second ||
+                   a.first == b.second && a.second == b.first;
+        }
+        public static bool operator !=(Edge a, Edge b)
+        {
+            return !(a.first == b.first && a.second == b.second ||
+                    a.first == b.second && a.second == b.first);
+        }
        
     }
 }
